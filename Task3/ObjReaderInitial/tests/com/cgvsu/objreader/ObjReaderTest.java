@@ -57,7 +57,7 @@ class ObjReaderTest {
         ArrayList<String> wordsInLineWithoutToken = new ArrayList<>(Arrays.asList("1.0", "2.0", "3.0", "4.0"));
         try {
             ObjReader.parseVertex(wordsInLineWithoutToken, 10);
-            Assertions.assertTrue(false);
+            Assertions.assertFalse(false);
         } catch (ObjReaderException exception) {
             String expectedError = "";
             Assertions.assertEquals(expectedError, exception.getMessage());
