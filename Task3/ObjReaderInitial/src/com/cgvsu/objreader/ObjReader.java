@@ -43,6 +43,7 @@ public class ObjReader {
 				// А еще это портит читаемость
 				// И не стоит забывать про тесты. Чем проще вам задать данные для теста, проверить, что метод рабочий,
 				// тем лучше.
+				//jkhbkfhclwehfcilhwqedhiuqwk
 				case OBJ_VERTEX_TOKEN -> result.vertices.add(parseVertex(wordsInLine, lineInd));
 				case OBJ_TEXTURE_TOKEN -> result.textureVertices.add(parseTextureVertex(wordsInLine, lineInd));
 				case OBJ_NORMAL_TOKEN -> result.normals.add(parseNormal(wordsInLine, lineInd));
