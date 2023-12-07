@@ -26,6 +26,9 @@ public class Normal {
         for (int i = 0; i < polygons.size(); i++) {
             normalsPolygon.add(i, normalPolygon(polygons.get(i), vertices));
             ArrayList<Integer> vertexIndices = polygons.get(i).getVertexIndices();
+
+            polygons.get(i).setNormalIndices(vertexIndices);
+
             for (int j = 0; j < vertexIndices.size(); j++) {
                 if (normalSummaVertex[vertexIndices.get(j)] == null) {
                     normalSummaVertex[vertexIndices.get(j)] = normalsPolygon.get(i);
@@ -38,7 +41,7 @@ public class Normal {
             }
         }
         for (int i = 0; i < count.length; i++) {
-            normalsVertex.add(VectorOperations.quotient(normalSummaVertex[i], count[i]));
+            normalsVertex.add(i, VectorOperations.normaliz(VectorOperations.quotient(normalSummaVertex[i], count[i])));
         }
         return normalsVertex;
     }
