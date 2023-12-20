@@ -3,7 +3,7 @@ package com.cgvsu.objreader;
 import com.cgvsu.math.Vector2f;
 import com.cgvsu.math.Vector3f;
 import com.cgvsu.model.Model;
-import com.cgvsu.model.Normal;
+import com.cgvsu.model.NormalUtils;
 import com.cgvsu.model.Polygon;
 
 import java.util.ArrayList;
@@ -52,7 +52,7 @@ public class ObjReader {
 				default -> {}
 			}
 		}
-		result.normals = Normal.normalsVertex(result.vertices,result.polygons);
+		result.normals = NormalUtils.normalsVertex(result.vertices,result.polygons);
 		return result;
 	}
 

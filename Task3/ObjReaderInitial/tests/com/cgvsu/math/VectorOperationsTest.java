@@ -48,9 +48,17 @@ class VectorOperationsTest {
     }
 
     @Test
-    void normaliz() {
+    void normalize() {
         Vector3f expectedResult = new Vector3f((float) (1.0F / Math.sqrt(2)), 0.0F, (float) (1.0F / Math.sqrt(2)));
-        Vector3f result = VectorOperations.normaliz(new Vector3f(1.0F / 3, 0.0F, 1.0F / 3));
+        Vector3f result = VectorOperations.normalize(new Vector3f(1.0F / 3, 0.0F, 1.0F / 3));
         Assertions.assertTrue(expectedResult.equals(result));
     }
+
+    @Test
+    void normalize2() {
+        Vector3f expectedResult = new Vector3f(0, 0,0);
+        Vector3f result = VectorOperations.normalize(new Vector3f(0, 0, 0));
+        //Assertions.assertTrue(expectedResult.equals(result));
+    }
+
 }

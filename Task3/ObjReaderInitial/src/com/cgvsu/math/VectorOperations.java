@@ -26,7 +26,7 @@ public class VectorOperations {
         return new Vector3f(v1.x / count, v1.y / count, v1.z / count);
     }
 
-    public static Vector3f normaliz(Vector3f v) {
+    public static Vector3f normalize(Vector3f v) {
         float s = (float) Math.sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
         return new Vector3f(v.x / s, v.y / s, v.z / s);
     }
